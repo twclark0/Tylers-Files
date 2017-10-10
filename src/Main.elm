@@ -1,7 +1,9 @@
 module Main exposing (..)
 
-import Html exposing (Html, text, div, img)
-import Html.Attributes exposing (src)
+import Html exposing (..)
+import Navigation exposing (..)
+import JumboTronCaption exposing (..)
+import Html.Attributes exposing (..)
 
 
 ---- MODEL ----
@@ -32,14 +34,15 @@ update msg model =
 
 ---- VIEW ----
 
-
 view : Model -> Html Msg
 view model =
-    div []
-        [ img [ src "/logo.svg" ] []
-        , div [] [ text "Your Elm App is working!" ]
-        ]
-
+    div [] [
+        div [class "jumbotron"]
+            [
+                navigation
+                , jumboTronCaption
+            ]
+    ]
 
 
 ---- PROGRAM ----
